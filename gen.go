@@ -1,4 +1,5 @@
 package main
 
-//go:generate export $(cat .env | xargs) && tern migrate --migrations ./internal/pgstore/migrations --config ./internal/pgstore/migrations/tern.conf
+//go:generate ./migrate.sh
+//go:generate sqlc generate -f ./internal/pgstore/sqlc.yaml
 
